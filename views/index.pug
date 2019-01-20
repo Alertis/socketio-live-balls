@@ -19,10 +19,12 @@ block content
                 .message this is awesome
           .ui.items.chat
             .item(ng-repeat="message in messages")
-              .content(ng-if="!message.type")
+              .content(ng-if="!message.type.code")
                 span [SERVER] &nbsp;
                 a.header.name {{message.username}} &nbsp;
-                .description.message
+                .description.message(ng-if="!message.type.message")
+                  | Ayrıldı
+                .description.message(ng-if="message.type.message")
                   | Katıldı
             
           .ui.action.input.fluid
