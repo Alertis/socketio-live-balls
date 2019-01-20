@@ -6,8 +6,11 @@ html
     meta(charset='UTF-8')
     link(rel='stylesheet', href='semantic/dist/semantic.min.css')
     link(rel='stylesheet', href='assets/stylesheets/style.css')
-  body
+  body(ng-app="app")
     block content
   
-    block javascript
+    block javascripts
+      script(src="/socket.io/socket.io.js")
       script(src="/angular/angular.min.js")
+      script(src="/javascripts/main.js")
+      script(src="/javascripts/indexController.js")
